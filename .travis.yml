@@ -7,4 +7,4 @@ before_install:
   - docker build -t sotewa/docker-react -f Dockerfile.dev .
 
 script:
-  -docker run -e CI=true sotewa/docker-react
+  - docker run -e CI=true sotewa/docker-react npm run test
