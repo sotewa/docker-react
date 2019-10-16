@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sotewa/docker-react:v0 -f Dockerfile.dev .
+
+script:
+  -docker run -e CI=true sotewa/docker-react:v0 npm run test
